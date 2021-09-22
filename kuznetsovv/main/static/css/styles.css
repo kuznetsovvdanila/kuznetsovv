@@ -93,7 +93,6 @@ body {
     z-index: 1000;
     display: flex;
     align-items: flex-start;
-    width: 20%;
     height: 100%;
     padding: 40px 3% 40px 3%;
     font-size: 32px;
@@ -113,20 +112,27 @@ body {
 .side_menu_desktop div .block {
     margin: 0 0 15px 0;
 }
-.side_menu_desktop div .block a {
+.side_menu_desktop div a .block {
     padding: 5px 5px 5px 0;
     cursor: pointer;
-    border-left: 0px solid #8C1C03;
+    border-left: 0px solid #F2B544;
     transition: .3s;
 }
-.side_menu_desktop div .block a.active {
-    background-color: #8C1C03;
-    border-left: 5px solid #8C1C03;
-    color: white;
+.side_menu_desktop div a .block span {
+    text-decoration: underline 5px solid #F2B544;
     transition: .3s;
 }
-.side_menu_desktop div .block a:hover {
-    border-left: 5px solid #8C1C03;
+.side_menu_desktop div a.active .block span {
+    text-decoration: underline 5px solid #8C1C03;
+    transition: .3s;
+}
+.side_menu_desktop div a.active .block {
+    border-left: 10px solid #F2B544;
+}
+
+.side_menu_desktop div a:hover .block span {
+    text-decoration: underline 5px solid #8C1C03;
+    transition: .3s;
 }
 .bottom {
     bottom: 40px;

@@ -1,4 +1,4 @@
-$('.block a').click(function(){
+$('a').click(function(){
     var blocks = document.getElementsByClassName('block_a');
     for (var i = 0; i < blocks.length; i++) {
         $(blocks[i]).removeClass('active');
@@ -6,6 +6,7 @@ $('.block a').click(function(){
     $(this).addClass('active');
 
     let href = $(this).attr('href');
+
     $('html, body').animate({
         scrollTop: $(href).offset().top
     }, {
@@ -48,18 +49,26 @@ $(window).scroll(function() {
                 }
             }
             for (var j = 0; j < articles_center.length; j++) {
-                if (articles_center[j].getBoundingClientRect().y < document.documentElement.clientHeight - 170 && articles_center[j].getBoundingClientRect().y > 150) {
+                if (articles_center[j].getBoundingClientRect().y + 100 < document.documentElement.clientHeight && articles_center[j].getBoundingClientRect().y + articles_center[j].getBoundingClientRect().height -100 > 0) {
                     $(articles_center[j]).removeClass('hidden');
                 }
                 else {
                     $(articles_center[j]).addClass('hidden');
                 }
             }
-            if (articles[i].getBoundingClientRect().y - articles[i].getBoundingClientRect().height / 2 + articles[i].getBoundingClientRect().height + 100 < document.documentElement.clientHeight && articles[i].getBoundingClientRect().y + articles[i].getBoundingClientRect().height / 2 > 0) {
-                $(articles[i]).removeClass('hidden');
+            if (articles[i].getBoundingClientRect().y + 250 < document.documentElement.clientHeight && articles[i].getBoundingClientRect().y + articles[i].getBoundingClientRect().height - 300 > 0) {
+//                $(articles[i]).removeClass('hidden');
+                articles[i].style.opacity = 1
             }
             else {
-                $(articles[i]).addClass('hidden');
+                if (articles[i].getBoundingClientRect().y + 250 >= document.documentElement.clientHeight) {
+                    articles[i].style.opacity = 1 - (articles[i].getBoundingClientRect().y + 100) * 0.001;
+                }
+                if (articles[i].getBoundingClientRect().y + articles[i].getBoundingClientRect().height - 300 <= 0) {
+                    articles[i].style.opacity = 1 + (articles[i].getBoundingClientRect().y - 200) * 0.001;
+                }
+
+//                $(articles[i]).addClass('hidden');
             }
         }
         else {
@@ -67,7 +76,7 @@ $(window).scroll(function() {
                 $(blocks_a[u]).removeClass('active');
             }
             for (var x = 0; x < articles.length; x++) {
-                $(articles[x]).addClass('hidden');
+                articles[x].style.opacity = 0;
             }
         }
     }
