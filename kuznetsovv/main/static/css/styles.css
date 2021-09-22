@@ -127,7 +127,7 @@ body {
     transition: .3s;
 }
 .side_menu_desktop div a.active .block {
-    border-left: 10px solid #F2B544;
+    border-left: 5px solid #F2B544;
 }
 
 .side_menu_desktop div a:hover .block span {
