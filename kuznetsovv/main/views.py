@@ -19,3 +19,10 @@ def index_page(request):
 
     }
     return render(request, 'index.html', context)
+
+
+def template_1_page(request):
+    context = {
+
+    }
+    return render(request, 'template_1.html', context)
