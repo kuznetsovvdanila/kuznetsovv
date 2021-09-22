@@ -83,16 +83,16 @@ body {
     box-sizing: border-box;
 }
 .logo {
-    text-align: left;
-    width: 100%;
+    text-align: center;
     font-weight: 600;
-    font-size: 170%;
+    font-size: 160%;
     margin: 0 0 40px 0;
 }
 .side_menu_desktop {
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    max-width: 16%;
     height: 100%;
     padding: 40px 3% 40px 3%;
     font-size: 32px;
@@ -107,7 +107,6 @@ body {
 }
 .side_menu_desktop > div:nth-child(2) {
     text-align: left;
-    width: 100%;
 }
 .side_menu_desktop div .block {
     margin: 0 0 15px 0;
@@ -240,8 +239,8 @@ body {
     padding: 30px 0 30px 0;
 }
 .slider_block {
-    min-width: 400px;
-    min-height: 400px;
+    min-width: 350px;
+    min-height: 350px;
     background-color: #F2B544;
     border: 10px solid black;
 }
@@ -267,7 +266,7 @@ body {
 .slider_block > .price {
     text-align: left;
     margin: 0 10px 10px 20px;
-    font-size: 24px !important;
+    font-size: 20px !important;
     font-weight: bold;
 }
 
