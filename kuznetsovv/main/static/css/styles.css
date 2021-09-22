@@ -4,7 +4,6 @@
 
 ::selection {
     background-color: #8C1C03;
-    color: #eeeeee;
 }
 input {
     outline: none;
@@ -83,20 +82,20 @@ body {
     box-sizing: border-box;
 }
 .logo {
-    text-align: center;
+    text-align: left;
+    border-bottom: 5px solid #8C1C03;
     font-weight: 600;
-    font-size: 160%;
-    margin: 0 0 40px 0;
+    font-size: 52px;
+    margin: 20px 0 60px 0;
 }
 .side_menu_desktop {
     z-index: 1000;
     display: flex;
-    align-items: center;
-    max-width: 16%;
+    align-items: flex-start;
+    width: 20%;
     height: 100%;
     padding: 40px 3% 40px 3%;
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 28px;
     background-color: #F2B544;
     box-shadow: 0 0 20px 0 black;
     transition: .3s;
@@ -106,10 +105,12 @@ body {
     transition: .3s;
 }
 .side_menu_desktop > div:nth-child(2) {
+    font-weight: 400;
     text-align: left;
+    max-width: 100%;
 }
 .side_menu_desktop div .block {
-    margin: 0 0 15px 0;
+    margin: 0 0 5px 0;
 }
 .side_menu_desktop div a .block {
     padding: 5px 5px 5px 0;
@@ -134,15 +135,21 @@ body {
     transition: .3s;
 }
 .bottom {
-    bottom: 40px;
-    font-size: 20px;
+    width: 20%;
+    text-align: left;
+    bottom: 50px;
+    font-size: 22px;
+}
+.vk_pic, .instagram_pic {
+    width: 50px;
+    height: 50px;
 }
 .main {
     z-index: 500;
     top: 50%;
     margin: -140px 0 0 30%;
-    width: 63%;
-    padding: 0 3% 20% 1%;
+    width: 60%;
+    padding: 0 3% 21% 3%;
 }
 .main > .article_center {
     align-items: center;
@@ -173,12 +180,12 @@ body {
 }
 .main > .article > h1 {
     text-decoration: underline 10px solid #8C1C03;
-    font-size: 56px;
+    font-size: 50px;
     margin: 0 0 30px 0;
 }
 .main > .article > h3 {
     max-width: 80%;
-    font-size: 32px;
+    font-size: 30px;
     margin: 0;
 }
 .main > .article:nth-child(2n + 1) {
@@ -294,7 +301,7 @@ body {
 }
 .call_me_back_form.active {
     box-shadow: 0 0 0 10px black,
-                0 0 2000px 10px black;
+                0 0 100px 10px black;
     transition: .3s;
     opacity: 1;
     z-index: 2000;
