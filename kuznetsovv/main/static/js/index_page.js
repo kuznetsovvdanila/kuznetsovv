@@ -16,8 +16,6 @@ $('a').click(function(){
 
 $('.open_form').click(function(){
     $('.call_me_back_form').addClass('active');
-    console.log('done');
-
 })
 $('.close').click(function(){
     $('.call_me_back_form').removeClass('active');
@@ -34,8 +32,15 @@ articles = document.getElementsByClassName('article');
 articles_center = document.getElementsByClassName('article_center');
 var blocks_a = document.getElementsByClassName('block_a');
 $(window).scroll(function() {
+    console.log(window.pageYOffset);
     for (var i = 0; i < articles.length; i++) {
         if (window.pageYOffset >= 50) {
+            if (window.pageYOffset >= 1200) {
+                $('.logo_mobile').removeClass('hidden');
+            }
+            else {
+                $('.logo_mobile').addClass('hidden');
+            }
             for (var k = 0; k < articles.length; k++) {
                 if (articles[k].getBoundingClientRect().y < 300) {
                     for (var l = 0; l < blocks_a.length; l++) {
@@ -61,11 +66,22 @@ $(window).scroll(function() {
                 articles[i].style.opacity = 1
             }
             else {
+
                 if (articles[i].getBoundingClientRect().y + 250 >= document.documentElement.clientHeight) {
-                    articles[i].style.opacity = 1 - (articles[i].getBoundingClientRect().y + 100) * 0.001;
+                    if (document.documentElement.clientWidth <= 1200) {
+                        articles[i].style.opacity = 1 - (articles[i].getBoundingClientRect().y + 100) * 0.0003;
+                    }
+                    else {
+                        articles[i].style.opacity = 1 - (articles[i].getBoundingClientRect().y + 100) * 0.001;
+                    }
                 }
                 if (articles[i].getBoundingClientRect().y + articles[i].getBoundingClientRect().height - 300 <= 0) {
-                    articles[i].style.opacity = 1 + (articles[i].getBoundingClientRect().y - 200) * 0.001;
+                    if (document.documentElement.clientWidth <= 1200) {
+                        articles[i].style.opacity = 1 + (articles[i].getBoundingClientRect().y - 200) * 0.0003;
+                    }
+                    else {
+                        articles[i].style.opacity = 1 + (articles[i].getBoundingClientRect().y - 200) * 0.001;
+                    }
                 }
 
 //                $(articles[i]).addClass('hidden');
