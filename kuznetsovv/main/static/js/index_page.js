@@ -32,7 +32,6 @@ articles = document.getElementsByClassName('article');
 articles_center = document.getElementsByClassName('article_center');
 var blocks_a = document.getElementsByClassName('block_a');
 $(window).scroll(function() {
-    console.log(window.pageYOffset);
     for (var i = 0; i < articles.length; i++) {
         if (window.pageYOffset >= 50) {
             if (window.pageYOffset >= 1200) {

@@ -396,7 +396,8 @@ body {
     }
     .call_me_back_form {
         width: 80%;
-        left: 22%;
+        left: 50%;
+        margin: -290px 0 0 -43.5%;
     }
     .call_me_back_form > input[type="text"] {
         height: 100px;
