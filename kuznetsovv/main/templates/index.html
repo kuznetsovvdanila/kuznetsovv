@@ -4,6 +4,16 @@
     <head>
         <title>kuznetsovv</title>
         <link rel="stylesheet" href="{% static '../static/css/styles.css' %}">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-208394137-1">
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-208394137-1');
+        </script>
     </head>
     <body>
         <div class="flex btw v_center fixed top_menu hidden">
@@ -226,7 +236,7 @@
             <input type="text" name="phone_number" placeholder="Номер телефона">
             <input type="text" name="email" placeholder="Почта">
             <input type="text" name="action_type" value="call_me_back_form" style="display: none;">
-            <!-- {% csrf_token %} -->
+            {% csrf_token %}
             <input class="font_2 pointer" type="submit" value="Отправить">
         </form>
 
