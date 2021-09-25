@@ -154,7 +154,7 @@ a {
     top: -85px;
     box-shadow: 0 6px 0 0 black;
     padding: 20px 0px 0px 0px;
-    width: 320px;
+    width: 350px;
     height: 250px;
     background-color: #E4D3CF;
     font-size: 22px;
@@ -168,13 +168,13 @@ a {
 }
 .menu > div:not(:last-child, :first-child) {
     text-align: left;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 30px;
     opacity: 0;
     transition: .3s;
 }
 .menu_header {
     width: 100%;
-    margin: 0 0 0 15px;
+    margin: 0 0 0 30px;
     text-align: left;
     font-size: 32px;
 }
@@ -309,15 +309,21 @@ h2 {
     justify-content: flex-start;
     font-size: 24px;
 }
+.bottom div:nth-child(3) > div:not(:last-child) {
+    margin: 0 0 5px 0;
+}
 .menu_bottom {
     justify-content: flex-start;
     grid-column-start: 2;
     grid-column-end: 4;
     font-size: 24px;
 }
+.menu_bottom > div:not(:last-child) {
+    margin: 0 0 5px 0;
+}
 .author {
     border-top: 6px solid black;
-    margin: 30px 0 0 0;
+    margin: 20px 0 0 0;
     padding: 20px 0 10px 0;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -439,7 +445,7 @@ h2 {
     .author {
         border-top: 6px solid black;
         margin: 30px 0 0 0;
-        padding: 20px 0 10px 0;
+        padding: 30px 0 20px 0;
         grid-column-start: 1;
         grid-column-end: 4;
         font-size: 48px;

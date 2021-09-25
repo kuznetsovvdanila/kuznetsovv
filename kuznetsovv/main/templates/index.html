@@ -232,8 +232,8 @@
             <div class="form_header font_2">
                 Мы позвоним!
             </div>
-            <input type="text" name="name" placeholder="Ваше имя">
-            <input type="text" name="phone_number" placeholder="Номер телефона">
+            <input type="text" name="name" placeholder="Ваше имя" required>
+            <input type="text" name="phone_number" placeholder="Номер телефона" required>
             <input type="text" name="email" placeholder="Почта">
             <input type="text" name="action_type" value="call_me_back_form" style="display: none;">
             {% csrf_token %}

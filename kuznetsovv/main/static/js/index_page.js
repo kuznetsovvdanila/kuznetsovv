@@ -66,3 +66,23 @@ $('.close').click(function(){
 $('.top_menu').click(function(){
     $('.call_me_back_form').removeClass('active');
 })
+
+if (document.getElementsByClassName('slider_block').length > 3 && document.documentElement.clientWidth >= 1100) {
+    (function() {
+        function scrollHorizontally(e) {
+            e = window.event || e;
+            var delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
+            document.getElementById('slider').scrollLeft -= (delta*40); // Multiplied by 40
+            e.preventDefault();
+        }
+        if (document.getElementById('slider').addEventListener) {
+            // IE9, Chrome, Safari, Opera
+            document.getElementById('slider').addEventListener("mousewheel", scrollHorizontally, false);
+            // Firefox
+            document.getElementById('slider').addEventListener("DOMMouseScroll", scrollHorizontally, false);
+        } else {
+            // IE 6/7/8
+            document.getElementById('slider').attachEvent("onmousewheel", scrollHorizontally);
+        }
+    })();
+}
