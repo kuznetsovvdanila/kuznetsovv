@@ -10,8 +10,14 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+import os
+from dotenv import load_dotenv
 from pathlib import Path
 
+dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
+print('ayoy:', dotenv_path)
+if os.path.exists(dotenv_path):
+    load_dotenv(dotenv_path)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = ')3z@36@=^^4@fri2b7p0-@=e+5+@1sg%=9ha#t7#kuwa*&l2h='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if DEBUG:
     ALLOWED_HOSTS = ['*']
@@ -77,12 +83,25 @@ WSGI_APPLICATION = 'kuznetsovv.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'kdb',
+            'USER': 'kuznetsovv',
+            'PASSWORD': os.environ.get('db_password'),
+            'HOST': 'localhost',
+            'PORT': '',
+        }
+    }
+print(DATABASES['default']['PASSWORD'])
 
 
 # Password validation
