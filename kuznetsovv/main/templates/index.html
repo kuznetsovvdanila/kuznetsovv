@@ -164,9 +164,8 @@
                 </div>
                 <input type="text" name="name" placeholder="Ваше имя">
                 <input type="text" name="phone_number" placeholder="Номер телефона">
-                <input type="text" name="email" placeholder="Почта">
                 <input type="text" name="action_type" value="call_me_back_form" style="display: none;">
-                <!-- {% csrf_token %} -->
+                {% csrf_token %}
                 <input class="font_2 pointer" type="submit" value="Отправить">
             </form>
             <div class="text flex column font_2">

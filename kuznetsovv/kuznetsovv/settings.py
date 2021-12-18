@@ -25,7 +25,10 @@ SECRET_KEY = ')3z@36@=^^4@fri2b7p0-@=e+5+@1sg%=9ha#t7#kuwa*&l2h='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['kuznetsovv.site', '127.0.0.1']
+if DEBUG:
+    ALLOWED_HOSTS = ['*']
+else:
+    ALLOWED_HOSTS = ['kuznetsovv.site', '194.58.111.212']
 
 
 # Application definition
