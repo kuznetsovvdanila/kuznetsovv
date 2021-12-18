@@ -15,7 +15,6 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 dotenv_path = os.path.join(os.path.dirname(__file__), '.env')
-print('ayoy:', dotenv_path)
 if os.path.exists(dotenv_path):
     load_dotenv(dotenv_path)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -101,7 +100,6 @@ else:
             'PORT': '',
         }
     }
-print(DATABASES['default']['PASSWORD'])
 
 
 # Password validation
